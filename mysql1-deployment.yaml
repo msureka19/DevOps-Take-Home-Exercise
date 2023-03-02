@@ -25,13 +25,6 @@ spec:
           limits:
             memory: "50Mi"
             cpu: "50m"
-        livenessProbe:
-          exec:
-            command:
-            - cat
-            - /tmp/healthy
-          initialDelaySeconds: 5
-          periodSeconds: 5
         env:
         - name: MYSQL_ROOT_PASSWORD
           valueFrom:
