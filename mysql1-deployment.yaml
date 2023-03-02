@@ -3,15 +3,20 @@ kind: Deployment
 metadata:
   name: thinkon-deployment1
   labels:
-    app: thinkon-deployment1
+    environment: test
 spec:
   selector:
     matchLabels:
-      app: thinkon-deployment1
+      environment: test
+  strategy:
+    rollingUpdate: 
+      maxSurge: 1
+      maxUnavilable: 0
+    type: RollingUpdate
   template:
     metadata:
       labels:
-        app: thinkon-deployment1
+        environment: test
     spec:
       containers:
       - name: mysql-db
