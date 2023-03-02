@@ -3,15 +3,15 @@ kind: Deployment
 metadata:
   name: thinkon-deployment2
   labels:
-    app: thinkon-deployment2
+    environment: test
 spec:
   selector:
     matchLabels:
-      app: thinkon-deployment2
+      environment: test
   template:
     metadata:
       labels:
-        app: thinkon-deployment2
+        environment: test
     hostNetwork: true
     spec:
       containers:
@@ -36,7 +36,7 @@ metadata:
   name: thinkon-service
 spec:
   selector:
-      app: nginx
+      environment: nginx
   ports:
     - name: nginx-port
       port: 80
